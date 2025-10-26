@@ -1,12 +1,18 @@
-'use client';
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { ArrowLeftIcon, ArrowRightIcon, GraduationCap, Users, Building} from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Container } from '@/components/shared/Container';
-import { theme } from '@/config/theme';
-import type { Slide, StatItem } from '@/types';
+"use client";
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  GraduationCap,
+  Users,
+  Building,
+} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Container } from "@/components/shared/Container";
+import { theme } from "@/config/theme";
+import type { Slide, StatItem } from "@/types";
 
 interface HeroProps {
   id: string;
@@ -18,18 +24,33 @@ export const Hero: React.FC<HeroProps> = ({ id }) => {
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const slides: Slide[] = [
-    { src: "/Hero Corusel/alumni&teachers.jpg", alt: "Alumni and teachers at Daffodil International College", caption: "Celebrating Alumni & Faculty" },
-    { src: "/Hero Corusel/chairmanvisit.jpg", alt: "Chairman visit at Daffodil International College", caption: "Leadership & Vision" },
-    { src: "/Hero Corusel/CSEAllSemester.jpg", alt: "CSE All Semesters", caption: "Empowering Tech Innovators" },
-    { src: "/Hero Corusel/StudentsAchivments.jpg", alt: "Student achievements", caption: "Inspiring Future Leaders" },
+    {
+      src: "/Hero Corusel/alumni&teachers.jpg",
+      alt: "Alumni and teachers at Daffodil International College",
+      caption: "Celebrating Alumni & Faculty",
+    },
+    {
+      src: "/Hero Corusel/chairmanvisit.jpg",
+      alt: "Chairman visit at Daffodil International College",
+      caption: "Leadership & Vision",
+    },
+    {
+      src: "/Hero Corusel/CSEAllSemester.jpg",
+      alt: "CSE All Semesters",
+      caption: "Empowering Tech Innovators",
+    },
+    {
+      src: "/Hero Corusel/StudentsAchivments.jpg",
+      alt: "Student achievements",
+      caption: "Inspiring Future Leaders",
+    },
   ];
 
-const stats: StatItem[] = [
-  { value: "1200+", label: "Students", icon: GraduationCap },
-  { value: "30+", label: "Faculty", icon: Users },
-  { value: "10", label: "Departments", icon: Building },
-];
-
+  const stats: StatItem[] = [
+    { value: "1200+", label: "Students", icon: GraduationCap },
+    { value: "30+", label: "Faculty", icon: Users },
+    { value: "10", label: "Departments", icon: Building },
+  ];
 
   // ✅ Stable callbacks to prevent ESLint/react-hooks warnings
   const nextSlide = useCallback(() => {
@@ -42,19 +63,18 @@ const stats: StatItem[] = [
 
   // ✅ Auto-slide with pause support
   useEffect(() => {
-  if (isPaused) return;
+    if (isPaused) return;
 
-  timerRef.current = setInterval(nextSlide, 7000);
+    timerRef.current = setInterval(nextSlide, 7000);
 
-  // ✅ Always return a cleanup function — never conditional
-  return () => {
-    if (timerRef.current) {
-      clearInterval(timerRef.current);
-      timerRef.current = null; // optional, but keeps ref consistent
+    // ✅ Always return a cleanup function — never conditional
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+        timerRef.current = null; // optional, but keeps ref consistent
       }
     };
   }, [nextSlide, isPaused]);
-
 
   return (
     <section
@@ -99,7 +119,7 @@ const stats: StatItem[] = [
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, ease: 'easeOut' }}
+            transition={{ duration: 1, ease: "easeOut" }}
             className="max-w-3xl text-white"
           >
             <h1 className="font-serif text-4xl md:text-6xl font-bold leading-tight drop-shadow-lg">
@@ -107,7 +127,8 @@ const stats: StatItem[] = [
             </h1>
             <p className="mt-4 text-lg md:text-xl font-light text-white/90 leading-relaxed">
               Daffodil International College — where education meets innovation.
-              Our mission is to nurture excellence, leadership, and lifelong learning.
+              Our mission is to nurture excellence, leadership, and lifelong
+              learning.
             </p>
 
             <div className="mt-8 flex gap-4">
@@ -157,7 +178,7 @@ const stats: StatItem[] = [
                 key={index}
                 onClick={() => setCurrentSlide(index)}
                 className={`h-2.5 w-2.5 rounded-full ${
-                  currentSlide === index ? 'bg-white' : 'bg-white/40'
+                  currentSlide === index ? "bg-white" : "bg-white/40"
                 }`}
                 whileHover={{ scale: 1.3 }}
                 transition={{ duration: 0.3 }}
@@ -186,7 +207,8 @@ const stats: StatItem[] = [
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.8 }}
         >
-          Academic excellence, global standards, and a culture of innovation — that’s Daffodil.
+          Academic excellence, global standards, and a culture of innovation —
+          that’s Daffodil.
         </motion.p>
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -205,7 +227,9 @@ const stats: StatItem[] = [
                   <Icon className="mx-auto w-10 h-10 text-blue-600" />
                 </div>
 
-                <div className="text-2xl font-bold text-gray-800">{stat.value}</div>
+                <div className="text-2xl font-bold text-gray-800">
+                  {stat.value}
+                </div>
                 <div className="text-gray-500">{stat.label}</div>
               </motion.div>
             );

@@ -1,10 +1,10 @@
 // components/layout/Topbar.tsx
-'use client';
-import { theme } from '@/config/theme';
-import React from 'react';
-import { Container } from '../shared/Container';
-import { FaPhone, FaEnvelope, FaExternalLinkAlt } from 'react-icons/fa';
-import { Button } from '@heroui/react';
+"use client";
+import { theme } from "@/config/theme";
+import React from "react";
+import { Container } from "../shared/Container";
+import { FaPhone, FaEnvelope, FaExternalLinkAlt } from "react-icons/fa";
+import { Button } from "@heroui/react";
 
 export const Topbar: React.FC = () => {
   return (
@@ -16,7 +16,6 @@ export const Topbar: React.FC = () => {
       }}
     >
       <Container className="py-2.5 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0 text-white">
-        
         {/* Left: Contact Info */}
         <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-center sm:text-left">
           {/* Phone */}

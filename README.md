@@ -12,36 +12,36 @@
 
 ## 📌 Table of Contents
 
-- [✨ Features](#-features)  
-- [🛠 Tech Stack](#-tech-stack)  
-- [📂 Project Structure](#-project-structure)  
-- [🖼 Screenshots](#-screenshots)  
-- [🚀 Getting Started](#-getting-started)  
-- [⚡ Scripts](#-scripts)  
-- [🤝 Contributing](#-contributing)  
-- [📄 License](#-license)  
-- [🙏 Acknowledgements](#-acknowledgements)  
+- [✨ Features](#-features)
+- [🛠 Tech Stack](#-tech-stack)
+- [📂 Project Structure](#-project-structure)
+- [🖼 Screenshots](#-screenshots)
+- [🚀 Getting Started](#-getting-started)
+- [⚡ Scripts](#-scripts)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+- [🙏 Acknowledgements](#-acknowledgements)
 
 ---
 
 ## ✨ Features
 
-- Fully **responsive** with premium UI/UX and accessibility support  
-- **Topbar**: Contact info, official recognition, student login  
-- SEO optimized: Open Graph & Twitter cards  
-- Interactive **HeroUI** components and smooth transitions  
-- Production-ready with **theme config** and consistent design system  
+- Fully **responsive** with premium UI/UX and accessibility support
+- **Topbar**: Contact info, official recognition, student login
+- SEO optimized: Open Graph & Twitter cards
+- Interactive **HeroUI** components and smooth transitions
+- Production-ready with **theme config** and consistent design system
 
 ---
 
 ## 🛠 Tech Stack
 
-| Layer | Tools / Libraries |
-|-------|------------------|
-| Frontend | Next.js 13, React, TypeScript |
-| UI / Styling | TailwindCSS, HeroUI, React Icons |
-| Deployment | Vercel / Netlify |
-| Version Control | Git & GitHub |
+| Layer           | Tools / Libraries                |
+| --------------- | -------------------------------- |
+| Frontend        | Next.js 13, React, TypeScript    |
+| UI / Styling    | TailwindCSS, HeroUI, React Icons |
+| Deployment      | Vercel / Netlify                 |
+| Version Control | Git & GitHub                     |
 
 ---
 
@@ -115,3 +115,4 @@ TailwindCSS
 HeroUI
 
 React Icons
+```

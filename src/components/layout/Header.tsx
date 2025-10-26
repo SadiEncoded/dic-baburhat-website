@@ -1,16 +1,16 @@
 // components/layout/Header.tsx
-'use client';
-import { navItems } from '@/config/navigation';
-import { theme } from '@/config/theme';
-import { AnimatePresence, motion } from 'framer-motion';
-import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
-import { Container } from '../shared/Container';
+"use client";
+import { navItems } from "@/config/navigation";
+import { theme } from "@/config/theme";
+import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
+import { Container } from "../shared/Container";
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
-  const [activeSection, setActiveSection] = useState<string>('hero');
+  const [activeSection, setActiveSection] = useState<string>("hero");
 
   const toggleDropdown = (index: number) => {
     setActiveDropdown(activeDropdown === index ? null : index);
@@ -18,8 +18,8 @@ export const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = document.querySelectorAll('section[id]');
-      let current = 'hero';
+      const sections = document.querySelectorAll("section[id]");
+      let current = "hero";
       sections.forEach((section) => {
         const top = section.getBoundingClientRect().top + window.scrollY - 100;
         if (window.scrollY >= top) current = section.id;
@@ -27,8 +27,8 @@ export const Header: React.FC = () => {
       setActiveSection(current);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -55,24 +55,26 @@ export const Header: React.FC = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <nav 
-          className="hidden lg:flex items-center gap-6 text-sm" 
+        <nav
+          className="hidden lg:flex items-center gap-6 text-sm"
           style={{ color: theme.colors.neutralText }}
         >
           {navItems.map((item, idx) => (
             <div key={idx} className="relative group">
               <a
-                href={item.href || '#'}
+                href={item.href || "#"}
                 className={`px-3 py-2 rounded-xl font-medium transition-all duration-200 hover:scale-105 ${
-                  activeSection === item.href?.substring(1) 
-                    ? 'text-blue-700 font-semibold' 
-                    : 'text-neutral-700'
+                  activeSection === item.href?.substring(1)
+                    ? "text-blue-700 font-semibold"
+                    : "text-neutral-700"
                 }`}
                 style={{
                   backgroundColor: theme.colors.neutralWhite,
                   boxShadow: theme.shadows.neumorphic,
                 }}
-                aria-current={activeSection === item.href?.substring(1) ? 'page' : undefined}
+                aria-current={
+                  activeSection === item.href?.substring(1) ? "page" : undefined
+                }
               >
                 {item.label}
               </a>
@@ -87,7 +89,7 @@ export const Header: React.FC = () => {
                     backgroundColor: theme.colors.neutralWhite,
                     boxShadow: theme.shadows.neumorphic,
                     border: `1px solid ${theme.colors.primaryLight}`,
-                    backdropFilter: 'blur(5px)',
+                    backdropFilter: "blur(5px)",
                   }}
                 >
                   {item.submenu.map((sub, i) => (
@@ -124,17 +126,23 @@ export const Header: React.FC = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             style={{ boxShadow: theme.shadows.neumorphic }}
           >
-            <svg 
-              width="18" 
-              height="18" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <path d={isMenuOpen ? 'M18 6L6 18M6 6l12 12' : 'M3 12h18M3 6h18M3 18h18'} />
+              <path
+                d={
+                  isMenuOpen
+                    ? "M18 6L6 18M6 6l12 12"
+                    : "M3 12h18M3 6h18M3 18h18"
+                }
+              />
             </svg>
           </button>
         </div>
@@ -145,7 +153,7 @@ export const Header: React.FC = () => {
         {isMenuOpen && (
           <motion.nav
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
+            animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
             className="lg:hidden"
@@ -168,7 +176,7 @@ export const Header: React.FC = () => {
                     {item.submenu && (
                       <span
                         className={`ml-2 transform transition-transform duration-200 ${
-                          activeDropdown === i ? 'rotate-180' : ''
+                          activeDropdown === i ? "rotate-180" : ""
                         }`}
                       >
                         ▼
@@ -179,7 +187,7 @@ export const Header: React.FC = () => {
                     {item.submenu && activeDropdown === i && (
                       <motion.div
                         initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
+                        animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.2 }}
                         className="pl-4"

@@ -1,77 +1,91 @@
 // src/app/layout.tsx
-'use client';
-import type { Metadata } from 'next';
-import './globals.css';
-import { theme } from '@/config/theme';
+"use client";
+import type { Metadata } from "next";
+import "./globals.css";
+import { theme } from "@/config/theme";
 
 export const metadata: Metadata = {
-  title: 'Daffodil International College — Baburhat',
+  title: "Daffodil International College — Baburhat",
   description:
-    'Daffodil International College offers industry-aligned programs and modern facilities to shape future leaders.',
+    "Daffodil International College offers industry-aligned programs and modern facilities to shape future leaders.",
   keywords: [
-    'education',
-    'college',
-    'Daffodil International College',
-    'Baburhat',
-    'admissions',
-    'HSC',
-    'Science',
-    'Business Studies',
-    'Computer Science Engineering',
-    'modern facilities',
-    'quality education',
-    'student life',
-    'campus',
-    'programs',
-    'courses',
-    'CSE',
-    'NU',
-    'Daffodil Family',
-    'chandpur',
-    'professional courses',
-    'cheap tuition fees',
-    'scholarships',
-    'affordable education',
+    "education",
+    "college",
+    "Daffodil International College",
+    "Baburhat",
+    "admissions",
+    "HSC",
+    "Science",
+    "Business Studies",
+    "Computer Science Engineering",
+    "modern facilities",
+    "quality education",
+    "student life",
+    "campus",
+    "programs",
+    "courses",
+    "CSE",
+    "NU",
+    "Daffodil Family",
+    "chandpur",
+    "professional courses",
+    "cheap tuition fees",
+    "scholarships",
+    "affordable education",
   ],
-  authors: [
-    { name: 'Mahmudul Hasan Sadi' },
-    { name: 'Mahin Binta Matin' },
-  ],
-  creator: 'Mahmudul Hasan Sadi, Mahin Binta Matin',
-  publisher: 'Daffodil International College',
+  authors: [{ name: "Mahmudul Hasan Sadi" }, { name: "Mahin Binta Matin" }],
+  creator: "Mahmudul Hasan Sadi, Mahin Binta Matin",
+  publisher: "Daffodil International College",
   openGraph: {
-    title: 'Daffodil International College — Baburhat',
-    description: 'Quality education with industry-aligned programs and modern facilities',
-    url: 'https://dic.edu.bd',
-    siteName: 'Daffodil International College',
-    locale: 'en_US',
-    type: 'website',
+    title: "Daffodil International College — Baburhat",
+    description:
+      "Quality education with industry-aligned programs and modern facilities",
+    url: "https://dic.edu.bd",
+    siteName: "Daffodil International College",
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Daffodil International College — Baburhat',
-    description: 'Quality education with industry-aligned programs',
+    card: "summary_large_image",
+    title: "Daffodil International College — Baburhat",
+    description: "Quality education with industry-aligned programs",
   },
   icons: {
     icon: [
-      { url: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/favicon/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
-      { url: '/favicon/favicon.ico' },
+      { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      {
+        url: "/favicon/android-chrome-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+      {
+        url: "/favicon/android-chrome-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
+      { url: "/favicon/favicon.ico" },
     ],
     apple: [
-      { url: '/favicon/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      {
+        url: "/favicon/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
     ],
   },
-  manifest: '/favicon/site.webmanifest',
-  metadataBase: new URL('https://dic.edu.bd'),
+  manifest: "/favicon/site.webmanifest",
+  metadataBase: new URL("https://dic.edu.bd"),
   alternates: {
-    canonical: 'https://dic.edu.bd',
+    canonical: "https://dic.edu.bd",
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <head>

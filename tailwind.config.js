@@ -1,8 +1,8 @@
 // tailwind.config.js
-import { theme } from './src/config/theme.ts';
+import { theme } from "./src/config/theme.ts";
 
 const tailwindConfig = {
-  content: ['./src/**/*.{ts,tsx,js,jsx}'],
+  content: ["./src/**/*.{ts,tsx,js,jsx}"],
   theme: {
     extend: {
       colors: {
@@ -20,9 +20,9 @@ const tailwindConfig = {
         error: theme.colors.error,
       },
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
-        poppins: ['Poppins', 'sans-serif'],
-        openSans: ['Open Sans', 'sans-serif'],
+        inter: ["Inter", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        openSans: ["Open Sans", "sans-serif"],
       },
       boxShadow: {
         subtle: theme.shadows.subtle,
@@ -34,7 +34,7 @@ const tailwindConfig = {
         md: theme.borderRadius.md,
         lg: theme.borderRadius.lg,
         xl: theme.borderRadius.xl,
-        '2xl': theme.borderRadius['2xl'],
+        "2xl": theme.borderRadius["2xl"],
       },
     },
   },
